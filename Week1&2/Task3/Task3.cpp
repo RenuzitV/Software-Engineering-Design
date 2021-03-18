@@ -11,7 +11,6 @@ int main(int argc, const char* argv[]) {
 	for (int i = 1; i < argc; ++i) {
 		if (sscanf_s(argv[i], "%f", a + (i - 1)) == 0){
 			cout << "invalid float";
-			exit(-2);
 		}
 	}
 	for (int i = 1; i < argc; ++i) {
