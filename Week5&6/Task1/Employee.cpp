@@ -1,12 +1,14 @@
 #include "Employee.h"
 #include <iostream>
 
+//default constructor
 Employee::Employee() {
 	first = last = "";
 	id = -1;
 	birth = *new dob();
 }
 
+//parameterized constructor
 Employee::Employee(std::string first, std::string last, int id, dob birth) {
 	this->first = first;
 	this->last = last;
@@ -14,10 +16,12 @@ Employee::Employee(std::string first, std::string last, int id, dob birth) {
 	this->birth = birth;
 }
 
+//detructor
 Employee::~Employee() {
 	//std::cout << "Employee " << first << ' ' << last << " deleted" << std::endl;
 }
 
+//enter information for a this employee
 bool Employee::enter() {
 	std::cout << "Enter first name : ";
 	std::cin >> this->first;
@@ -47,12 +51,14 @@ bool Employee::enter() {
 	return true;
 }
 
+//show employee's information
 void Employee::show() {
 	std::cout << first << ' ' << last << "'s informations :" << std::endl;
 	std::cout << "Date of birth : " << birth.date << '\\' << birth.month << '\\' << birth.year << std::endl;
 	std::cout << "Identification number : " << id << std::endl << std::endl;
 }
 
+//for use with other functions
 std::string Employee::firstName() {
 	return first;
 }

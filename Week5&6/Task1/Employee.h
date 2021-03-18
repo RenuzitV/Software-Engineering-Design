@@ -2,11 +2,14 @@
 #include <iostream>
 #include <string>
 
+//string of months
 const std::string MONTHS[12] = { "january", "february", "march", "arpil", "may", "june", "july", "august", "september", "october", "november", "december" };
 
+//declaring employee class and private functions and variables
 class Employee{
 private:
 
+	//class for date of birth
 	class dob {
 	public:
 		int date, month, year;
@@ -14,10 +17,13 @@ private:
 			date = month = year = 0;
 		}
 	};
+	
+	//private variables
 	std::string first, last;
 	int id;
 	dob birth;
 
+	//private function to enter a number from a string
 	int enterNum(const char* name) {
 		std::string snum;
 		std::cout << "Enter " << name << ":";
@@ -25,6 +31,7 @@ private:
 		return strtol(snum.c_str(), NULL, 10);
 	}
 
+	//private function to enter month via name or number
 	bool enterMonth() {
 		std::cout << "Enter month :";
 		std::string month;
@@ -41,6 +48,7 @@ private:
 		return birth.month = strtol(month.c_str(), NULL, 10);
 	}
 
+	//private function to trim a string
 	void trim(std::string *s) {
 		while (s->size() > 0 && isspace(s->front())) {
 			s->erase(0);
@@ -55,9 +63,12 @@ private:
 	}
 
 public:
+	//constructor and parameterized equivelant
 	Employee();
 	Employee(std::string first, std::string last, int id, dob birth);
+	//destructor
 	~Employee();
+	//see employee.cpp for more infomation
 	bool enter();
 	void show();
 	std::string firstName();

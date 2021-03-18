@@ -16,6 +16,6 @@ int main(int argc, const char* argv[]) {
 	for (int i = 1; i < argc; ++i) {
 		float* p = a + i - 1;
 		float res = p?*p:0;
-		printf_s("%.5f\n", res);
+		printf_s("%.5f\n", (a+i-1)?*(a+i-1):0);
 	}
 }

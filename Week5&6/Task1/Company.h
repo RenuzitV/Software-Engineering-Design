@@ -3,8 +3,10 @@
 #include <vector>
 
 class Company{
+	//private vector to store all people of company as an employee
 	std::vector<Employee> people;
 
+	//see employee.h for some explainations
 	int enterNum(const char* name) {
 		std::string snum;
 		std::cout << "Enter " << name << ":";
@@ -26,12 +28,16 @@ class Company{
 	}
 
 public :
+	//default constructor and destructor
 	Company();
 	~Company();
+	//overloaded functions to find a specific employee
 	Employee* findEmployee(std::string first, std::string last);
 	Employee* findEmployee(std::string first);
 	Employee* findEmployee(int ID);
 	Employee* findEmployee();
+
+	//see company.cpp for explainations
 	void findShowEmployee();
 	void makeNewEmployee();
 	void showEmployees();	
