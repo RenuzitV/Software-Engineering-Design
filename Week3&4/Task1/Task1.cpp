@@ -14,7 +14,7 @@ int main(){
 		string s;
 		cout << "enter number " << i << ": ";
 		cin >> s;
-		long a = strtol(s.c_str(), NULL, 10);
+		double a = strtof(s.c_str(), NULL);
 		string ss = to_string(a);
 		if (ss == s) q.push(ss);
 		else cerr << s << endl;
