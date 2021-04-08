@@ -28,7 +28,6 @@ int main(){
 	}
 	
 	outfile3.write((char*)&ar3, sizeof(ar3));
-
 	outfile1.close();
 	outfile2.close();
 	outfile3.close();
