@@ -100,11 +100,13 @@ Employee* Company::findEmployee(int ID) {
 //pushes a new employee into people and let the user enter information
 void Company::makeNewEmployee() {
 	people.push_back(*new Employee());
-	people.back().enter();
+	if (!people.back().enter()) deleteEmployee(&people.back());
 }
 
 //shows all employeess in the company
 void Company::showEmployees() {
+	if (people.size() > 1) std::cout << "There are" << people.size() << " people in this company\n";
+	else std::cout << "There is" << 1 << " person in this company\n";
 	for (Employee E : people) {
 		E.show();
 	}
@@ -113,6 +115,17 @@ void Company::showEmployees() {
 //finds and delete an employee
 void Company::deleteEmployee() {
 	Employee* E = Company::findEmployee();
+	if (E) {
+		std::cout << "Employee " << E->firstName() << ' ' << E->lastName() << " deleted" << std::endl;
+		people.erase(next(people.begin(), E - &*people.begin()));
+	}
+	else {
+		std::cout << "No such Employee" << std::endl;
+	}
+}
+
+//parameterized deleteEmployee
+void Company::deleteEmployee(Employee* E) {
 	if (E) {
 		std::cout << "Employee " << E->firstName() << ' ' << E->lastName() << " deleted" << std::endl;
 		people.erase(next(people.begin(), E - &*people.begin()));

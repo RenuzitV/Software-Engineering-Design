@@ -42,5 +42,6 @@ public :
 	void makeNewEmployee();
 	void showEmployees();	
 	void deleteEmployee();
+	void deleteEmployee(Employee* E);
 };
 

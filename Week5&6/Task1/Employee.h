@@ -3,7 +3,7 @@
 #include <string>
 
 //string of months
-const std::string MONTHS[12] = { "january", "february", "march", "arpil", "may", "june", "july", "august", "september", "october", "november", "december" };
+const std::string MONTHS[12] = { "January", "February", "March", "Arpil", "May", "June", "July", "August", "September", "October", "November", "December" };
 
 //declaring employee class and private functions and variables
 class Employee{
@@ -37,15 +37,15 @@ private:
 		std::string month;
 		std::cin >> month;
 		trim(&month);
-		int test = strtol(month.c_str(), NULL, 10);
-		if (test) return birth.month = test;
-		for (char& c : month) c = tolower(c);
+		birth.month = strtol(month.c_str(), NULL, 10);
+		if (1 <= birth.month && birth.month <= 12) return true;
 		for (int i = 0; i < 12; ++i) {
 			if (month == MONTHS[i]) {
 				return birth.month = i + 1; 
 			}
 		}
-		return birth.month = strtol(month.c_str(), NULL, 10);
+		birth.month = strtol(month.c_str(), NULL, 10);
+		return 1 <= birth.month && birth.month <= 12;
 	}
 
 	//private function to trim a string

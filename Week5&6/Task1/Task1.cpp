@@ -15,30 +15,30 @@ int main(){
 		//error checking on token
 		token = strtol(temp.c_str(), NULL, 10);
 		switch (token) {
-		case -1:{//exit code
-			exit(0);
-			break;
-		}
-		case 1: {//make a new employee
-			company.makeNewEmployee();
-			break;
-		}
-		case 2: {//find and show an employee
-			company.findShowEmployee();
-			break;
-		}
-		case 3: {//show all employees
-			company.showEmployees();
-			break;
-		}
-		case 4: {//find and delete a single employee
-			company.deleteEmployee();
-			break;
-		}
-		default: {//error check
-			cout << "wrong input" << endl;
-			break;
-		}
+			case -1:{//exit code
+				exit(0);
+				break;
+			}
+			case 1: {//make a new employee
+				company.makeNewEmployee();
+				break;
+			}
+			case 2: {//find and show an employee
+				company.findShowEmployee();
+				break;
+			}
+			case 3: {//show all employees
+				company.showEmployees();
+				break;
+			}
+			case 4: {//find and delete a single employee
+				company.deleteEmployee();
+				break;
+			}
+			default: {//error check
+				cout << "wrong input" << endl;
+				break;
+			}
 		}
 	} while (token != -1);
 }
